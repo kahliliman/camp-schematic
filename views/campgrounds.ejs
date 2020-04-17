@@ -2,16 +2,18 @@
 
 <h1>Campgrounds</h1>
 
-<p>this is camp</p>
+<div class="col-sm" style="padding: 0; display: flex;">
+  <% campgrounds.forEach(function(item){ %>
 
-<a href="/campgrounds/new">Add new campgrounds</a>
+  <div class="card" style="width: 18rem; margin: 0px 24px 0px 0px;">
+    <img src="<%= item.image %>" class="card-img-top" />
+    <div class="card-body">
+      <h5 class="card-title"><%= item.name %></h5>
+    </div>
+  </div>
 
-<% campgrounds.forEach(function(item){ %>
-<div>
-  <h2><%= item.name %></h2>
-  <img src="<%= item.image %>" alt="" width="500" />
+  <% }); %>
 </div>
 
-<a href="/">Home</a>
-
-<% }); %> <%- include("partials/footer") %>
+<a class="btn btn-primary" href="/campgrounds/new">Add new</a>
+<%- include("partials/footer") %>
