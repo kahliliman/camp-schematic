@@ -14,23 +14,10 @@
   </head>
   <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
       <div class="container">
-
-        <a class="navbar-brand" href="/">YelpCamp</a>
-        <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-      <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
+      <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+        <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <a class="nav-link" href="/">Home</a>
           </li>
@@ -50,11 +37,24 @@
             <a class="dropdown-item" href="/campgrounds">Campground List</a>
             <a class="dropdown-item" href="/campgrounds/new">Add New</a>
           </div>
-          </li>
+        </li>
+      </ul>
+      </div>
+      <div class="mx-auto order-0">
+          <a class="navbar-brand mx-auto" href="#">Yelp Camp</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+      </div>
+      <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="/">Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="/">Sign Up</a></li>
+          <li class="nav-item"><a class="nav-link" href="/">Logout</a></li>
         </ul>
       </div>
     </div>
-    </nav>
+  </nav>
     
     <div class="container">
 
