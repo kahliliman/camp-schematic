@@ -15,15 +15,17 @@ app.use(express.static(__dirname + "/public"));
 var campgroundSchema = new mongoose.Schema({
   name: String,
   image: String,
+  desc: String,
 });
 
 var Campground = mongoose.model("Campground", campgroundSchema);
 
 // Campground.create(
 //   {
-//     name: "Mountain",
+//     name: "Granite Hill",
 //     image:
-//       "https://invinciblengo.org/photos/event/slider/manali-girls-special-adventure-camp-himachal-pradesh-1xJtgtx-1440x810.jpg",
+//       "https://media.istockphoto.com/photos/army-camp-picture-id468698534?k=6&m=468698534&s=612x612&w=0&h=8XPmv_PzFCIM6K40WQ_KFnCUN4ZejnIW0Hlnh4wdLKI=",
+//     description: "Here is the description of etc etc",
 //   },
 //   function (err, camp) {
 //     if (err) {
@@ -44,7 +46,7 @@ app.get("/campgrounds", function (req, res) {
     if (err) {
       console.log(err);
     } else {
-      res.render("campgrounds", { campgrounds: camps });
+      res.render("index", { campgrounds: camps });
     }
   });
 });
@@ -52,12 +54,12 @@ app.get("/campgrounds", function (req, res) {
 app.post("/campgrounds", function (req, res) {
   var name = req.body.name;
   var image = req.body.image;
-  // var newCampground = { name: name, image: image };
-  // campgrounds.push(newCampground);
+  var desc = req.body.description;
   Campground.create(
     {
       name: name,
       image: image,
+      description: desc,
     },
     function (err, camp) {
       if (err) {
@@ -73,6 +75,10 @@ app.post("/campgrounds", function (req, res) {
 
 app.get("/campgrounds/new", function (req, res) {
   res.render("new");
+});
+
+app.get("/campgrounds/:id", function (req, res) {
+  res.render("show");
 });
 
 app.listen(1234, function () {
