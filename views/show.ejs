@@ -2,8 +2,12 @@
 
 <div class="row">
   <div class="col-lg-12 spacing-32">
-    <h1>Camp Details</h1>
+    <h1><%= campground.name %></h1>
   </div>
 </div>
+
+<img src="<%= campground.image %>" alt="" />
+
+<p><%= campground.description %></p>
 
 <%- include("partials/footer") %>
